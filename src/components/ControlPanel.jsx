@@ -2,26 +2,25 @@ import React, { useEffect, useState } from "react";
 
 import Input from "./Input";
 
-const ControlPanel = ({ functionList }) => {
-
-    function setAnswer() {
-        
-    }
+const ControlPanel = ({ data: { functionList, setAnswer } }) => {
 
 	return (
 		<>
-			<div>ControlPanel</div>;
+			<div>ControlPanel</div>
 			<div>
-				{functionList.forEach(({func, funcName, inputName}) => {
-					<Input
-						props={{
-							func,
-							funcName,
-							inputName,
-							inputID: inputName,
-							setAnswer,
-						}}
-					/>;
+				{functionList.map(({ func, funcName, inputName }) => {
+					return (
+						<Input
+							key={inputName}
+							data={{
+								func,
+								funcName,
+								inputName,
+								inputID: funcName,
+								setAnswer,
+							}}
+						/>
+					);
 				})}
 			</div>
 		</>
