@@ -67,3 +67,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.inputWrapper {
+	display: flex;
+	flex-direction: column;
+    gap: 1rem;
+}
+
+.inputWrapper > label {
+    align-self: flex-start;
+}
