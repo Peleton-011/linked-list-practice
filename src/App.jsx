@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import ControlPanel from "./components/ControlPanel";
-import Node from "./LinkedList";
+import LinkedList from "./LinkedList";
 
 function App() {
 	function setAnswer() {
 		console.log("ass");
 	}
+
+
 
 	const controlPanelData = {
 		functionList: [
