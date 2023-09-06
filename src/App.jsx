@@ -8,7 +8,15 @@ function App() {
 		console.log("ass");
 	}
 
+	const LL = new LinkedList();
 
+	LL.toString();
+	LL.append("7");
+	LL.toString();
+	LL.append("1");
+	LL.toString();
+	LL.append("9");
+	LL.toString();
 
 	const controlPanelData = {
 		functionList: [

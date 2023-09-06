@@ -14,10 +14,28 @@ export default class LinkedList {
 		}
 		lastNode.value = val;
 	}
+
+	prepend(val) {
+		this._head = new Node(val, this._head);
+	}
+
+    toString() {
+        let str = "";
+
+        let lastNode = this._head;
+
+		while (lastNode.nextNode) {
+
+            str += `(${lastNode.value}) -> `
+			lastNode = lastNode.nextNode;
+		}
+        str += `(${lastNode.value}) `
+
+        console.log(str)
+    }
 }
 
 class Node {
-	_value = null;
 	/**
 	 * @param {any} val
 	 */
@@ -28,11 +46,11 @@ class Node {
 		return this._value;
 	}
 
-	constructor(val) {
-		this._value = val;
+	constructor(val, nextNode) {
+		this._value = val || null;
+		this._nextNode = nextNode || null;
 	}
 
-	_nextNode = null;
 	/**
 	 * @param {Node} newNextNode
 	 */
