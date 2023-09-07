@@ -65,10 +65,40 @@ export default class LinkedList {
 		for (let i = 0; i < index; i++) {
 			curr = curr.nextNode;
 		}
-        return curr
+		return curr;
 	}
 
+	pop() {
+		let curr = this._head;
+		for (let i = 0; i < this.size - 2; i++) {
+			curr = curr.nextNode;
+		}
+		curr.nextNode = null;
+	}
 
+	contains(val) {
+		let lastNode = this._head;
+
+		while (lastNode.nextNode) {
+			if (lastNode.value == val) return true;
+			lastNode = lastNode.nextNode;
+		}
+		return lastNode.value == val;
+	}
+
+	find(val) {
+		let lastNode = this._head;
+		let index = 0;
+
+		while (lastNode.value != val && lastNode.nextNode) {
+			index++;
+			lastNode = lastNode.nextNode;
+		}
+		if (lastNode.value != val) {
+			return null;
+		}
+		return index;
+	}
 }
 
 class Node {
