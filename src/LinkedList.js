@@ -99,6 +99,17 @@ export default class LinkedList {
 		}
 		return index;
 	}
+
+	insertAt(val, index) {
+		this.at(index - 1).nextNode = new Node(
+			val,
+			this.at(index - 1).nextNode
+		);
+	}
+
+	removeAt(index) {
+		this.at(index - 1).nextNode = this.at(index).nextNode;
+	}
 }
 
 class Node {
