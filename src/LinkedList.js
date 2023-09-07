@@ -19,20 +19,56 @@ export default class LinkedList {
 		this._head = new Node(val, this._head);
 	}
 
-    toString() {
-        let str = "";
+	toString() {
+		let str = "";
 
-        let lastNode = this._head;
+		let lastNode = this._head;
 
 		while (lastNode.nextNode) {
-
-            str += `(${lastNode.value}) -> `
+			str += `(${lastNode.value}) -> `;
 			lastNode = lastNode.nextNode;
 		}
-        str += `(${lastNode.value}) `
+		str += `(${lastNode.value}) `;
 
-        console.log(str)
-    }
+		console.log(str);
+	}
+
+	get size() {
+		let lastNode = this._head;
+		let size = 0;
+
+		while (lastNode.nextNode) {
+			size++;
+			lastNode = lastNode.nextNode;
+		}
+		if (lastNode.value) {
+			return ++size;
+		}
+		return size;
+	}
+
+	get head() {
+		return this._head;
+	}
+
+	get tail() {
+		let lastNode = this._head;
+
+		while (lastNode.nextNode) {
+			lastNode = lastNode.nextNode;
+		}
+		return lastNode;
+	}
+
+	at(index) {
+		let curr = this._head;
+		for (let i = 0; i < index; i++) {
+			curr = curr.nextNode;
+		}
+        return curr
+	}
+
+
 }
 
 class Node {

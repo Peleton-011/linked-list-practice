@@ -11,12 +11,24 @@ function App() {
 	const LL = new LinkedList();
 
 	LL.toString();
+	console.log(LL.size);
 	LL.append("7");
 	LL.toString();
-	LL.append("1");
+	console.log(LL.size);
+	LL.prepend("1");
 	LL.toString();
+	console.log(LL.size);
 	LL.append("9");
 	LL.toString();
+	console.log(LL.size);
+	console.log(LL.at(0));
+	console.log(LL.at(1));
+	console.log(LL.at(2));
+    console.log(LL.head)
+    console.log(LL.tail)
+    console.log(LL.at(LL.size - 2))
+
+
 
 	const controlPanelData = {
 		functionList: [
