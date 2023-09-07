@@ -7,7 +7,7 @@ const ControlPanel = ({ data: { functionList, setAnswer } }) => {
 	return (
 		<>
 			<div>ControlPanel</div>
-			<div>
+			<div className="inputs">
 				{functionList.map(({ func, funcName, inputName }) => {
 					return (
 						<Input

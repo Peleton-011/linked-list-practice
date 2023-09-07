@@ -12,7 +12,7 @@ const Input = ({ data: { func, funcName, inputName, inputID, setAnswer } }) => {
 					);
 				}}
 			>
-				Calculate
+				{funcName}
 			</button>
 		</div>
 	);
